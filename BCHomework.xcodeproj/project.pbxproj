@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A2DB4FF51EDEAEA5001E2F11 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DB4FF41EDEAEA5001E2F11 /* main.swift */; };
+		A2DB4FFD1EDEAEF3001E2F11 /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DB4FFB1EDEAEF3001E2F11 /* Program.swift */; };
+		A2DB4FFE1EDEAEF3001E2F11 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DB4FFC1EDEAEF3001E2F11 /* Student.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,8 @@
 /* Begin PBXFileReference section */
 		A2DB4FF11EDEAEA5001E2F11 /* BCHomework */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BCHomework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2DB4FF41EDEAEA5001E2F11 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		A2DB4FFB1EDEAEF3001E2F11 /* Program.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
+		A2DB4FFC1EDEAEF3001E2F11 /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 		A2DB4FF31EDEAEA5001E2F11 /* BCHomework */ = {
 			isa = PBXGroup;
 			children = (
+				A2DB4FFB1EDEAEF3001E2F11 /* Program.swift */,
+				A2DB4FFC1EDEAEF3001E2F11 /* Student.swift */,
 				A2DB4FF41EDEAEA5001E2F11 /* main.swift */,
 			);
 			path = BCHomework;
@@ -121,6 +127,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2DB4FFD1EDEAEF3001E2F11 /* Program.swift in Sources */,
+				A2DB4FFE1EDEAEF3001E2F11 /* Student.swift in Sources */,
 				A2DB4FF51EDEAEA5001E2F11 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
