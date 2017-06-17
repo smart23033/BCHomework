@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 let homeDirectory = NSHomeDirectory()
 var studentArr = [Student]()
 var passedStudentArr = [Student]()
@@ -16,30 +15,27 @@ var totalAvg = 0.0
 var individualGrade = [String:String]()
 
 
+// 파일 읽어서 JSON을 파싱
 func readJSONObject(){
     do {
         let path = homeDirectory + "/students.json"
-//        print(path)
         let url = URL(fileURLWithPath: path)
         let data = try Data(contentsOf: url)
         let json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers)
         
         if let students = json as? [AnyObject] {
-            //                    print(students)
             
             for student in students{
                 guard let name = student["name"] as? String,
                     let grade = student["grade"] as? [String:Int] else { return }
-                //                        print("\(name), \(grade)")
                 
                 let student = Student(name: name, grade: grade)
                 
                 studentArr.append(student)
             }
             
+//          알파벳 순으로 이름 정렬
             studentArr.sort{$0.name < $1.name}
-            
-            //                    print(studentArr)
             
             
         } else {
@@ -53,11 +49,13 @@ func readJSONObject(){
     
 }
 
+// 성적 계산 (전체 학생의 평균, 개인별 학점, 수료생 구하기)
 func getGrade(students:[Student]){
     
     for student in students {
         
         let dict = student.grade
+//      학생 각각의 평균값 구하기
         let avg = Double(Array(dict.values).reduce(0, +)) / Double(dict.count)
         
         totalAvg += avg
@@ -81,15 +79,16 @@ func getGrade(students:[Student]){
     
     totalAvg = totalAvg / Double(students.count)
     
-    //        print("totalAvg : \(totalAvg)")
 }
 
+// 결과값을 파일에 쓰기
 func printResult(){
     
     var count = 0
     var result = ""
     let path = homeDirectory + "/result.txt"
     
+//    소수점 둘째자리 반올림
     result += "전체 평균 : \(String(format: "%.2f", totalAvg))\n\n"
     result += "개인별 학점\n"
     for key in individualGrade.keys.sorted(by: <){
